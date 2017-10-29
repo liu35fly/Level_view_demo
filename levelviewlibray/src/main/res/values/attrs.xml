@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--BlurredImage-->
+    <declare-styleable name="LevelView">
+        <attr name="levelViewTitleBackgroundColor" format="string" />
+        <attr name="levelViewTitleTextColor" format="string" />
+        <attr name="levelViewBackgroundColor" format="string" />
+        <attr name="levelViewTextColor" format="string" />
+        <attr name="levelViewLineColor" format="string" />
+        <attr name="levelViewRightTextColor" format="string" />
+        <attr name="levelViewIconBg" format="integer" />
+        <attr name="levelViewIconBgTag" format="integer" />
+    </declare-styleable>
+</resources>

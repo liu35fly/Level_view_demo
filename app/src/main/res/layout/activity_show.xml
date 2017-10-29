@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.fly.level_view_demo.ShowActivity">
+    <com.example.levelviewlibray.LevelView
+        android:id="@+id/level_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:levelViewBackgroundColor="#888456"
+        app:levelViewLineColor="#000000"
+        app:levelViewTextColor="#000000"
+        app:levelViewRightTextColor="#aaaaaa">
+        <!--app:levelViewIconBg=""-->
+        <!--app:levelViewIconBgTag=""-->
+        <!--app:levelViewTitleBackgroundColor=""-->
+        <!--app:levelViewTitleTextColor=""-->
+    </com.example.levelviewlibray.LevelView>
+
+</android.support.constraint.ConstraintLayout>
