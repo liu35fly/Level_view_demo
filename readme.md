@@ -23,9 +23,27 @@ gradle
 			...
 			maven { url 'https://jitpack.io' }
 		}
-	}Copy
+	}
 
   dependencies {
 	    compile 'com.github.liu35fly:Level_view_demo:v1.0'
   }
 </code></pre>
+
+maven
+<pre><code>
+ <repositories>
+ 		<repository>
+ 		    <id>jitpack.io</id>
+ 		    <url>https://jitpack.io</url>
+ 		</repository>
+ 	</repositories>
+
+ 	<dependency>
+     	 <groupId>com.github.liu35fly</groupId>
+     	 <artifactId>Level_view_demo</artifactId>
+     	 <version>v1.0</version>
+     </dependency>
+</code></pre>
+
+
