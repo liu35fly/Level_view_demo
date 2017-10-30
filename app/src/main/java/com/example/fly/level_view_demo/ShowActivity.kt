@@ -37,12 +37,11 @@ class ShowActivity : AppCompatActivity() {
                     "count is ${childView!!.count}",Toast.LENGTH_SHORT).show()
              }
 
-            override fun onItemLongClik(dataBean: LevelViewBaseData?, i: Int) {
-                Toast.makeText(this@ShowActivity,"长按了第${i}项,name is ${dataBean!!.name}" +
-                        "count is ${dataBean!!.count}" +
-                        "time is ${dataBean!!.time}" +
-                        "address is ${dataBean!!.address}" +
-                        "match is ${dataBean!!.match}",Toast.LENGTH_SHORT).show()
+            override fun onItemLongClik(childView: LevelViewBaseView?, i: Int) {
+                Toast.makeText(this@ShowActivity,"长按了第${i}项,name is ${childView!!.name}" +
+                        "count is ${childView!!.count}" +
+                        "time is ${childView!!.data.icon}" +
+                        "other is ${childView!!.data.list}",Toast.LENGTH_SHORT).show()
             }
         })
         when (type) {
@@ -56,8 +55,15 @@ class ShowActivity : AppCompatActivity() {
     private fun showPartView() {
         var list = mutableListOf<LevelViewBaseData>()
         var mydata: MyData
+
+        var lists= mutableListOf<String>()
+        lists.add("1")
+        lists.add("20171029")
+        lists.add("广州")
+        lists.add("dota")
+
         for (i in 0 until 30) {
-            mydata = MyData("$i", "name->$i", "$i", "http://upload.jianshu.io/users/upload_avatars/586279/f25227826f82.png?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96", "time:$i", "address<$i>", "test")
+            mydata = MyData("$i", "name->$i", "$i", "http://upload.jianshu.io/users/upload_avatars/586279/f25227826f82.png?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96", lists)
             list.add(mydata)
         }
         level!!.addChildView(64, list, null, false)
@@ -66,13 +72,20 @@ class ShowActivity : AppCompatActivity() {
     private fun showTwoView() {
         var listOne = mutableListOf<LevelViewBaseData>()
         var listTwo = mutableListOf<LevelViewBaseData>()
+
+        var lists= mutableListOf<String>()
+        lists.add("1")
+        lists.add("20171029")
+        lists.add("广州")
+        lists.add("dota")
+
         var mydata: MyData
         for (i in 0 until 30) {
-            mydata = MyData("$i", "name->$i", "$i", "http://upload.jianshu.io/users/upload_avatars/586279/f25227826f82.png?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96", "time:$i", "address<$i>", "test")
+            mydata = MyData("$i", "name->$i", "$i", "http://upload.jianshu.io/users/upload_avatars/586279/f25227826f82.png?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96", lists)
             listOne.add(mydata)
         }
         for (i in 0 until 3) {
-            mydata = MyData("$i", "name->$i", "$i", "http://upload.jianshu.io/users/upload_avatars/586279/f25227826f82.png?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96", "time:$i", "address<$i>", "test")
+            mydata = MyData("$i", "name->$i", "$i", "http://upload.jianshu.io/users/upload_avatars/586279/f25227826f82.png?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96", lists)
             listTwo.add(mydata)
         }
         level!!.addChildView(16, listOne, listTwo, null, false)

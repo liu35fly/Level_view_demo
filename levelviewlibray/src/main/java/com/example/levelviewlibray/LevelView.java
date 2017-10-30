@@ -261,18 +261,8 @@ public class LevelView extends HorizontalScrollView {
                     }
 
                     @Override
-                    public String getTime() {
-                        return "";
-                    }
-
-                    @Override
-                    public String getAddress() {
-                        return "";
-                    }
-
-                    @Override
-                    public String getMatch() {
-                        return "";
+                    public List<String> getList() {
+                        return new ArrayList<String>(0);
                     }
                 };
 
@@ -369,11 +359,11 @@ public class LevelView extends HorizontalScrollView {
             }
 
             @Override
-            public void onItemLongClik(LevelViewBaseData dataBean, int i) {
+            public void onItemLongClik(LevelViewBaseView childView, int i) {
                 if (levelViewListener == null) {
                     return;
                 }
-                levelViewListener.onItemLongClik(dataBean, i);
+                levelViewListener.onItemLongClik(childView, i);
 
             }
         });
@@ -389,6 +379,50 @@ public class LevelView extends HorizontalScrollView {
         relativeLayout.addView(group, paramsGroup);
         scrollView.addView(relativeLayout);
         parent.addView(scrollView);
+    }
+
+    public String getLevelBaseViewTextColor() {
+        return levelBaseViewTextColor;
+    }
+
+    public void setLevelBaseViewTextColor(String levelBaseViewTextColor) {
+        this.levelBaseViewTextColor = levelBaseViewTextColor;
+    }
+
+    public String getLevelBaseViewLineColor() {
+        return levelBaseViewLineColor;
+    }
+
+    public void setLevelBaseViewLineColor(String levelBaseViewLineColor) {
+        this.levelBaseViewLineColor = levelBaseViewLineColor;
+    }
+
+    public String getLevelBaseViewCountColor() {
+        return levelBaseViewCountColor;
+    }
+
+    public void setLevelBaseViewCountColor(String levelBaseViewCountColor) {
+        this.levelBaseViewCountColor = levelBaseViewCountColor;
+    }
+
+    public int getIconBgWhite() {
+        return iconBgWhite;
+    }
+
+    public void setIconBgWhite(int iconBgWhite) {
+        this.iconBgWhite = iconBgWhite;
+    }
+
+    public int getIconBgTag() {
+        return iconBgTag;
+    }
+
+    public void setIconBgTag(int iconBgTag) {
+        this.iconBgTag = iconBgTag;
+    }
+
+    public levelViewScrollListen getScrollListener() {
+        return scrollListener;
     }
 
     public void setLevelViewListener(LevelViewListener levelViewListener) {
@@ -408,7 +442,7 @@ public class LevelView extends HorizontalScrollView {
 
         void onItemClik(LevelViewBaseView childView, int i);
 
-        void onItemLongClik(LevelViewBaseData dataBean, int i);
+        void onItemLongClik(LevelViewBaseView childView, int i);
     }
 
     public interface levelViewScrollListen {

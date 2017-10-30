@@ -1,5 +1,7 @@
 package com.example.levelviewlibray;
 
+import java.util.List;
+
 /**
  * Created by fly on 2017/10/28.
  */
@@ -34,26 +36,12 @@ public abstract class LevelViewBaseData {
      */
     public abstract String getIcon();
 
-    //长按后展示信息
 
     /**
-     * 时间
+     * 其余信息
      *
      * @return
      */
-    public abstract String getTime();
+    public abstract List<String> getList();
 
-    /**
-     * 地点
-     *
-     * @return
-     */
-    public abstract String getAddress();
-
-    /**
-     * 标示
-     *
-     * @return
-     */
-    public abstract String getMatch();
 }

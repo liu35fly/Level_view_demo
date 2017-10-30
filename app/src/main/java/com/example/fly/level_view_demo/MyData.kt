@@ -6,22 +6,20 @@ import com.example.levelviewlibray.LevelViewBaseData
  * Created by fly on 2017/10/28.
  */
 class MyData : LevelViewBaseData {
-    var ids:String?=null
-    var names:String?=null
-    var counts:String ?=null
-    var icons:String?=null
-    var times:String?=null
-    var addresses:String?=null
-    var matches:String?=null
+
+    var ids: String? = null
+    var names: String? = null
+    var counts: String? = null
+    var icons: String? = null
+    var lists: MutableList<String>? = null
+
     constructor() : super()
-    constructor(id: String, name: String, count: String, icon: String, time: String, address: String, match: String) {
-        ids=id
-        names=name
-        counts=count
-        icons=icon
-        times=time
-        addresses=address
-        matches=match
+    constructor(id: String, name: String, count: String, icon: String, list: MutableList<String>) {
+        ids = id
+        names = name
+        counts = count
+        icons = icon
+        lists = list
     }
 
     override fun getId(): String {
@@ -40,15 +38,7 @@ class MyData : LevelViewBaseData {
         return icons!!
     }
 
-    override fun getTime(): String {
-        return times!!
-    }
-
-    override fun getAddress(): String {
-        return addresses!!
-    }
-
-    override fun getMatch(): String {
-        return matches!!
+    override fun getList(): MutableList<String> {
+        return lists!!
     }
 }

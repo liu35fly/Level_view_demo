@@ -102,7 +102,7 @@ public class LevelViewBaseGroup extends ViewGroup {
             totalFirstLine = (int) Math.pow(2.0, (int) n + 1.0);
 //            isFormate = false;
             colum = (int) n + 1 + 1;
-            addData(totalFirstLine, list, list2, (int) n + 1, 1, isChou);
+            addData(totalFirstLine, list, list2, (int) n + 1, 0, isChou);
         }
     }
 
@@ -181,6 +181,7 @@ public class LevelViewBaseGroup extends ViewGroup {
 
             if (n == 2) {
                 bean.setNumber(1);
+                bean.setMaxRow(1);
             }
             addView(bean);
         }
@@ -232,7 +233,6 @@ public class LevelViewBaseGroup extends ViewGroup {
 
         } catch (Exception e) {
             e.printStackTrace();
-            Log.e("test", "this is " + child + "  .." + e.getMessage());
             ((LevelViewBaseView) getChildAt(position)).setIcon(BitmapFactory.decodeResource(context.getResources(), iconBgTag));
             ((LevelViewBaseView) getChildAt(position)).setLevelBaseViewColor(levelBaseViewTextColor,levelBaseViewLineColor,levelBaseViewCountColor);
 
@@ -395,7 +395,7 @@ public class LevelViewBaseGroup extends ViewGroup {
                 if (listener == null) {
                     return true;
                 }
-                listener.onItemLongClik(childView.getData(), i);
+                listener.onItemLongClik(childView, i);
 //                LogUtils.showToast(context, "onlongclik is  " + i);
                 return true;
             }
@@ -418,6 +418,6 @@ public class LevelViewBaseGroup extends ViewGroup {
 
         void onItemClik(LevelViewBaseView childView, int i);
 
-        void onItemLongClik(LevelViewBaseData data, int i);
+        void onItemLongClik(LevelViewBaseView childView, int i);
     }
 }
