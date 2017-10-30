@@ -32,7 +32,8 @@
  设置levelView顶部title的字体色
 
 ### 2.levelView的使用：
-###### &#160; &#160; &#160; &#160;将levelView实现后只需调用一个方法  addChildView(),填入相应数据即可展示如果需要每个子view的点击或长按监听，只需 setLevelViewListener（），其中所有信息都在childView.getData()中
+
+  &#160; &#160; &#160; &#160;将levelView实现后只需调用一个方法  addChildView(),填入相应数据即可展示如果需要每个子view的点击或长按监听，只需 setLevelViewListener（），其中所有信息都在childView.getData()中
 
 eg.
 <pre><code>
